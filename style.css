@@ -1,0 +1,340 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background: #080b12;
+    color: white;
+
+    overflow-x: hidden;
+}
+
+
+/* Animated Background */
+
+.background {
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    background: #5865f2;
+
+    filter: blur(180px);
+
+    opacity: 0.35;
+
+    top: -200px;
+    left: -200px;
+
+    animation: move 10s infinite alternate;
+
+    z-index: -1;
+}
+
+@keyframes move {
+
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(500px, 400px);
+    }
+
+}
+
+
+/* Main Container */
+
+.container {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+}
+
+
+/* Card */
+
+.card {
+    width: 100%;
+    max-width: 500px;
+
+    padding: 30px;
+
+    background: rgba(20, 24, 35, 0.9);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.6);
+
+    backdrop-filter: blur(15px);
+
+    animation: appear 0.8s ease;
+}
+
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Top Status */
+
+.top-bar {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: #b5bac1;
+}
+
+.status {
+    width: 9px;
+    height: 9px;
+
+    background: #23a55a;
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 15px #23a55a;
+}
+
+
+/* Profile */
+
+.profile {
+    text-align: center;
+
+    padding: 30px 0;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 45px;
+
+    background: linear-gradient(
+        135deg,
+        #5865f2,
+        #9b59ff
+    );
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 35px rgba(88, 101, 242, 0.6);
+}
+
+
+.profile h1 {
+    margin-bottom: 5px;
+}
+
+.username {
+    color: #949ba4;
+}
+
+.bio {
+    margin-top: 20px;
+
+    color: #c7c9ce;
+}
+
+
+/* Stats */
+
+.stats {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.stat {
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+.stat strong {
+    display: block;
+
+    font-size: 18px;
+
+    margin-bottom: 7px;
+}
+
+.stat span {
+    font-size: 10px;
+
+    color: #949ba4;
+
+    letter-spacing: 1px;
+}
+
+
+/* Discord Box */
+
+.discord-box {
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    border-radius: 15px;
+}
+
+.discord-box p {
+    margin: 0 0 6px;
+
+    font-size: 11px;
+
+    color: #949ba4;
+}
+
+.discord-box strong {
+    font-size: 14px;
+
+    word-break: break-word;
+}
+
+
+/* Buttons */
+
+button {
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+
+#copyButton {
+    padding: 10px 15px;
+
+    background: #5865f2;
+
+    color: white;
+}
+
+
+.buttons {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.main-button {
+
+    padding: 15px;
+
+    background: #5865f2;
+
+    color: white;
+}
+
+.secondary-button {
+
+    padding: 15px;
+
+    background: #242832;
+
+    color: white;
+}
+
+
+#message {
+
+    text-align: center;
+
+    min-height: 20px;
+
+    color: #57f287;
+
+    font-size: 14px;
+
+    margin-top: 15px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 400px) {
+
+    .card {
+        padding: 20px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons {
+        grid-template-columns: 1fr;
+    }
+
+}
